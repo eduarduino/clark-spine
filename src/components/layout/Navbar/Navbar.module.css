@@ -364,10 +364,11 @@
   .navOverlay {
     display: block;
     position: fixed;
-    inset: 0;
-    background: rgba(7, 18, 36, 0.52);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    top: 72px;   /* don't cover the navbar bar */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(7, 18, 36, 0.48);
     z-index: 998;
     opacity: 0;
     pointer-events: none;
@@ -379,15 +380,16 @@
     pointer-events: auto;
   }
 
-  /* ── Right-side drawer ── */
+  /* ── Right-side drawer — starts flush below the navbar ── */
   .nav {
     position: fixed;
-    top: 0;
+    top: 72px;            /* flush below the fixed navbar */
     right: 0;
     bottom: 0;
     width: min(82vw, 300px);
     background: var(--white);
     border-left: 1px solid var(--gray-100);
+    border-top: 1px solid var(--gray-100);
     box-shadow: -6px 0 40px rgba(0, 0, 0, 0.22);
     flex-direction: column;
     align-items: stretch;
@@ -396,7 +398,7 @@
     gap: 0;
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 72px 0 2rem;       /* top pad = navbar height */
+    padding: 0;
     transform: translateX(110%);
     transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 999;
@@ -451,7 +453,7 @@
     align-items: center;
     justify-content: center;
     gap: 0.6rem;
-    margin: 1rem 1.25rem 0;
+    margin: 1rem 1.25rem 1.5rem;
     padding: 0.9rem 1rem;
     background: var(--navy);
     color: #ffffff !important;
