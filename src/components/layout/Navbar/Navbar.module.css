@@ -113,81 +113,68 @@
   border-color: var(--navy) !important;
 }
 
-/* ===== CONTROLS GROUP (language + theme) ===== */
+/* ===== CONTROLS GROUP — unified EN | ES | [icon] pill ===== */
 .controls {
   display: flex;
   align-items: center;
-  gap: 0.35rem;
   flex-shrink: 0;
 }
 
-/* EN / ES segmented pill */
-.langToggle {
+.pill {
   display: flex;
   align-items: center;
-  gap: 2px;
   background: var(--gray-100);
   border: 1.5px solid var(--gray-200);
-  color: inherit;
   border-radius: var(--radius-full);
   padding: 3px;
-  cursor: pointer;
-  flex-shrink: 0;
-  font-family: var(--font-sans);
+  gap: 0;
   transition: border-color 0.2s ease;
 }
 
-.langToggle:hover {
+.pill:focus-within {
   border-color: var(--accent);
 }
 
-/* active language label */
-.langOn {
-  display: block;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  background: var(--white);
-  color: var(--navy);
+/* individual segment button */
+.seg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 24px;
+  padding: 0 0.6rem;
+  background: transparent;
+  border: none;
   border-radius: var(--radius-full);
-  padding: 0.22rem 0.65rem;
-  box-shadow: var(--shadow-sm);
-  line-height: 1;
-  transition: all 0.2s ease;
-}
-
-/* inactive language label */
-.langOff {
-  display: block;
+  font-family: var(--font-sans);
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   color: var(--text-light);
-  padding: 0.22rem 0.65rem;
-  line-height: 1;
-  transition: all 0.2s ease;
-}
-
-/* dark / light icon button */
-.themeToggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 30px;
-  background: var(--gray-100);
-  border: 1.5px solid var(--gray-200);
-  border-radius: var(--radius-full);
-  color: var(--navy);
   cursor: pointer;
-  flex-shrink: 0;
-  transition: all 0.2s ease;
+  line-height: 1;
+  transition: all 0.18s ease;
 }
 
-.themeToggle:hover {
-  background: var(--navy);
-  color: var(--white);
-  border-color: var(--navy);
+.seg:hover {
+  color: var(--navy);
+}
+
+/* the active / selected segment */
+.segActive {
+  background: var(--white);
+  color: var(--navy);
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+}
+
+/* thin rule between segments */
+.pillDiv {
+  width: 1px;
+  height: 14px;
+  background: var(--gray-200);
+  flex-shrink: 0;
+  border-radius: 1px;
 }
 
 /* ===== SERVICES DROPDOWN ===== */

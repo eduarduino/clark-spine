@@ -68,7 +68,7 @@
   margin-bottom: 0;
   justify-content: center;
 }
-.statsBar { background: var(--navy); padding: 1.25rem 0; }
+.statsBar { background: var(--inverse-bg2); padding: 1.25rem 0; }
 .statsInner { display: flex; align-items: center; justify-content: center; }
 .stat {
   flex: 1; max-width: 240px;
@@ -79,14 +79,14 @@
 .stat strong {
   font-family: var(--font-serif);
   font-size: 1.5rem; font-weight: 700;
-  color: var(--white);
+  color: var(--inverse-text-bright);
 }
 .stat span {
   font-size: 0.72rem; font-weight: 500;
-  color: rgba(255,255,255,0.6);
+  color: var(--inverse-text-dim);
   text-transform: uppercase; letter-spacing: 0.06em;
 }
-.statDiv { width: 1px; height: 36px; background: rgba(255,255,255,0.15); flex-shrink: 0; }
+.statDiv { width: 1px; height: 36px; background: var(--inverse-border); flex-shrink: 0; }
 @media (max-width: 768px) {
   .content { padding: 2.5rem 0 2rem; text-align: center; }
   .sub     { margin-left: auto; margin-right: auto; }

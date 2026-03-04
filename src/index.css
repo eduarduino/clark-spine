@@ -56,6 +56,15 @@
   --spine-c1: #1a7abf;
   --spine-c2: #0a2342;
   --spine-disc: #6bbde0;
+
+  /* Always-dark panel surfaces (footer, CTA, stats bars) */
+  --inverse-bg: #050f1c;
+  --inverse-bg2: #0a2342;
+  --inverse-text: rgba(255,255,255,0.72);
+  --inverse-text-dim: rgba(255,255,255,0.42);
+  --inverse-text-bright: #ffffff;
+  --inverse-accent: #6bbde0;
+  --inverse-border: rgba(255,255,255,0.07);
 }
 
 /* ===== DARK MODE ===== */
@@ -101,6 +110,15 @@
   --spine-c1: #4db8f0;
   --spine-c2: #1a7abf;
   --spine-disc: #62b4e8;
+
+  /* Always-dark panel surfaces: go deeper in dark mode */
+  --inverse-bg: #020912;
+  --inverse-bg2: #060f1c;
+  --inverse-text: rgba(255,255,255,0.65);
+  --inverse-text-dim: rgba(255,255,255,0.32);
+  --inverse-text-bright: rgba(255,255,255,0.92);
+  --inverse-accent: #5ab4e0;
+  --inverse-border: rgba(255,255,255,0.05);
 }
 
 html {

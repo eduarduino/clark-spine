@@ -1,5 +1,5 @@
 .banner {
-  background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+  background: linear-gradient(135deg, var(--inverse-bg), var(--inverse-bg2));
   padding: 4rem 1.5rem;
 }
 
@@ -14,13 +14,13 @@
 .text h2 {
   font-family: var(--font-serif);
   font-size: clamp(1.5rem, 3vw, 2rem);
-  color: var(--white);
+  color: var(--inverse-text-bright);
   margin-bottom: 0.5rem;
 }
 
 .text p {
   font-size: 1rem;
-  color: rgba(255,255,255,0.75);
+  color: var(--inverse-text);
 }
 
 .actions {

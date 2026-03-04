@@ -98,23 +98,31 @@ export default function Navbar() {
         </nav>
 
         <div className={styles.controls}>
-          <button
-            className={styles.langToggle}
-            onClick={toggle}
-            aria-label={lang === 'en' ? 'Cambiar a Español' : 'Switch to English'}
-          >
-            <span className={lang === 'en' ? styles.langOn : styles.langOff}>EN</span>
-            <span className={lang === 'es' ? styles.langOn : styles.langOff}>ES</span>
-          </button>
-          <button
-            className={styles.themeToggle}
-            onClick={toggleTheme}
-            aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-          >
-            {isDark
-              ? <Sun size={15} aria-hidden="true" />
-              : <Moon size={15} aria-hidden="true" />}
-          </button>
+          <div className={styles.pill} role="group" aria-label="Language and theme">
+            <button
+              className={`${styles.seg} ${lang === 'en' ? styles.segActive : ''}`}
+              onClick={lang !== 'en' ? toggle : undefined}
+              aria-label="Switch to English"
+              aria-pressed={lang === 'en'}
+            >EN</button>
+            <span className={styles.pillDiv} aria-hidden="true" />
+            <button
+              className={`${styles.seg} ${lang === 'es' ? styles.segActive : ''}`}
+              onClick={lang !== 'es' ? toggle : undefined}
+              aria-label="Cambiar a Español"
+              aria-pressed={lang === 'es'}
+            >ES</button>
+            <span className={styles.pillDiv} aria-hidden="true" />
+            <button
+              className={styles.seg}
+              onClick={toggleTheme}
+              aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              {isDark
+                ? <Sun size={13} aria-hidden="true" />
+                : <Moon size={13} aria-hidden="true" />}
+            </button>
+          </div>
         </div>
 
         <a href="tel:9084979440" className={styles.phoneBtn}>

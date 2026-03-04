@@ -1,6 +1,6 @@
 .footer {
-  background: var(--navy-dark);
-  color: rgba(255,255,255,0.75);
+  background: var(--inverse-bg);
+  color: var(--inverse-text);
   margin-top: auto;
 }
 
@@ -19,13 +19,13 @@
 .name {
   font-family: var(--font-serif);
   font-size: 1.35rem;
-  color: var(--white);
+  color: var(--inverse-text-bright);
   margin-bottom: 0.35rem;
   line-height: 1.3;
 }
 .tagline {
   font-size: 0.8rem;
-  color: var(--accent-light);
+  color: var(--inverse-accent);
   font-weight: 600;
   letter-spacing: 0.04em;
   margin-bottom: 0.875rem;
@@ -37,7 +37,7 @@
 }
 .inner {
   font-size: 0.8rem;
-  color: var(--accent-light);
+  color: var(--inverse-accent);
   line-height: 1.6;
 }
 
@@ -49,7 +49,7 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--white);
+  color: var(--inverse-text-bright);
   margin-bottom: 1rem;
 }
 
@@ -62,12 +62,12 @@
 }
 .links li a {
   font-size: 0.9rem;
-  color: rgba(255,255,255,0.65);
+  color: var(--inverse-text);
   text-decoration: none;
   transition: color 0.2s;
 }
 .links li a:hover {
-  color: var(--white);
+  color: var(--inverse-text-bright);
 }
 
 /* Hours */
@@ -84,10 +84,10 @@
   font-size: 0.825rem;
 }
 .hours li span:first-child {
-  color: rgba(255,255,255,0.55);
+  color: var(--inverse-text-dim);
 }
 .hours li span:last-child {
-  color: rgba(255,255,255,0.85);
+  color: var(--inverse-text-bright);
   text-align: right;
 }
 
@@ -105,25 +105,25 @@
   font-size: 0.875rem;
 }
 .contact li svg {
-  color: var(--accent-light);
+  color: var(--inverse-accent);
   margin-top: 0.2rem;
   flex-shrink: 0;
   width: 14px;
 }
 .contact li a,
 .contact li span {
-  color: rgba(255,255,255,0.75);
+  color: var(--inverse-text);
   text-decoration: none;
   line-height: 1.55;
   transition: color 0.2s;
 }
 .contact li a:hover {
-  color: var(--white);
+  color: var(--inverse-text-bright);
 }
 
 /* Bottom Bar */
 .bottom {
-  border-top: 1px solid rgba(255,255,255,0.08);
+  border-top: 1px solid var(--inverse-border);
   padding: 1.25rem 0;
 }
 .bottom .container {
@@ -135,14 +135,14 @@
 }
 .bottom p {
   font-size: 0.775rem;
-  color: rgba(255,255,255,0.4);
+  color: var(--inverse-text-dim);
   line-height: 1.5;
 }
 .bottom a {
-  color: rgba(255,255,255,0.55);
+  color: var(--inverse-text);
 }
 .bottom a:hover {
-  color: var(--white);
+  color: var(--inverse-text-bright);
 }
 
 /* Responsive */
