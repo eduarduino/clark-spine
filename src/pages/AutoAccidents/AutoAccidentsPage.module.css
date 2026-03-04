@@ -292,6 +292,11 @@
   }
 }
 
+.legalText :global(.divider) {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .legalText p {
   color: var(--text-light);
   line-height: 1.7;
