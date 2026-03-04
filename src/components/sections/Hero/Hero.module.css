@@ -88,8 +88,10 @@
 }
 .statDiv { width: 1px; height: 36px; background: var(--inverse-border); flex-shrink: 0; }
 @media (max-width: 768px) {
+  /* .decorBg is hidden on mobile so overflow:hidden is no longer needed — removing it
+     prevents long Spanish words like "Espalda•Cuello•Ciática" from being clipped */
+  .hero    { overflow: visible; }
   .content { padding: 2.5rem 0 2rem; text-align: center; }
-  /* Scale down headline to prevent long Spanish words from overflowing */
   .headline {
     font-size: clamp(1.3rem, 5.5vw, 2rem);
     overflow-wrap: break-word;
