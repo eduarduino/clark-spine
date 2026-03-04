@@ -107,7 +107,7 @@ export default function Navbar() {
               className={`${styles.seg} ${styles.segActive}`}
               onClick={toggle}
               aria-label={lang === 'en' ? 'Cambiar a Español' : 'Switch to English'}
-            >{lang === 'en' ? 'EN' : 'ES'}</button>
+            >{lang === 'en' ? 'ES' : 'EN'}</button>
             <span className={styles.pillDiv} aria-hidden="true" />
             <button
               className={styles.seg}
