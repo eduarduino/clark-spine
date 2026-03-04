@@ -153,22 +153,45 @@
   }
 }
 
-@media (max-width: 600px) {
-  .top { padding: 2.5rem 0 2rem; }
+@media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr 1fr;
-    gap: 1.75rem 1rem;
+    gap: 2rem 1.5rem;
   }
-  /* Brand spans full width */
   .brand {
     grid-column: 1 / -1;
   }
-  /* Contact Us spans full width */
-  .col:last-child {
-    grid-column: 1 / -1;
+}
+
+@media (max-width: 480px) {
+  .top { padding: 2.5rem 0 2rem; }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
+
+  .brand {
+    grid-column: auto;
+  }
+
+  .name {
+    font-size: 1.2rem;
+  }
+
+  /* Hours: tighten spacing */
+  .hours li {
+    font-size: 0.8rem;
+  }
+
+  /* Contact: keep icon + text inline */
+  .contact li {
+    font-size: 0.85rem;
+  }
+
   .bottom .container {
     flex-direction: column;
-    text-align: center;
+    align-items: flex-start;
+    gap: 0.35rem;
   }
 }
