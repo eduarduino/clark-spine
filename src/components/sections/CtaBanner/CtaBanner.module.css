@@ -1,0 +1,46 @@
+.banner {
+  background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+  padding: 4rem 1.5rem;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.text h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.text p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.75);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.875rem;
+  flex-shrink: 0;
+}
+
+.phoneBtn {
+  background: var(--accent);
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(26,122,191,0.4);
+}
+.phoneBtn:hover {
+  background: var(--accent-hover);
+  color: var(--white);
+}
+
+@media (max-width: 700px) {
+  .inner { flex-direction: column; text-align: center; }
+  .actions { justify-content: center; }
+}

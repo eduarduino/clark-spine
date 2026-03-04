@@ -1,0 +1,7 @@
+# Enforce HTTPS + canonicalize to non-www (uncomment when DNS is pointed)
+# http://clarkspineandpainrelief.com/*   https://clarkspineandpainrelief.com/:splat    301!
+# http://www.clarkspineandpainrelief.com/* https://clarkspineandpainrelief.com/:splat  301!
+# https://www.clarkspineandpainrelief.com/* https://clarkspineandpainrelief.com/:splat 301!
+
+# SPA catch-all — serve index.html for all non-asset routes (required for React Router)
+/*  /index.html  200

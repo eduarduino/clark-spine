@@ -1,0 +1,337 @@
+/* ── Page Hero ── */
+.hero {
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+  padding: 7rem 0 0;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.heroTag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+.heroTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  color: white;
+  margin: 0 0 1rem;
+  line-height: 1.15;
+}
+
+.heroSub {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+.heroActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-bottom: 4rem;
+}
+
+.callBtn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.75rem;
+  background: #5cb8f0;
+  color: var(--navy-dark);
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.callBtn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.wave {
+  display: block;
+  line-height: 0;
+}
+
+.wave svg {
+  width: 100%;
+  height: 60px;
+  display: block;
+}
+
+/* ── Shared Section Header ── */
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* ── Urgency Section ── */
+.urgencySection {
+  background: var(--off-white);
+}
+
+.urgencyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .urgencyGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.urgencyCard {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.75rem;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  border-top: 4px solid var(--navy);
+  transition: transform 0.2s;
+}
+
+.urgencyCard:hover {
+  transform: translateY(-3px);
+}
+
+.urgencyIcon {
+  font-size: 2.75rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.urgencyCard h3 {
+  font-family: var(--font-serif);
+  color: var(--navy);
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+}
+
+.urgencyCard p {
+  color: var(--text-light);
+  font-size: 0.875rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── Injuries Section ── */
+.injuriesSection {
+  background: white;
+}
+
+.injuriesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 900px) {
+  .injuriesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .injuriesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.injuryCard {
+  text-align: center;
+  padding: 1.75rem 1.25rem;
+}
+
+.injuryIcon {
+  font-size: 2.25rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.injuryCard h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.4rem;
+}
+
+.injuryCard p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ── Process Section ── */
+.processSection {
+  background: var(--navy);
+  color: white;
+}
+
+.processTag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+}
+
+.processTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: white;
+  margin: 0 0 0.75rem;
+}
+
+.processDivider {
+  width: 48px;
+  height: 3px;
+  background: #5cb8f0;
+  border-radius: 2px;
+  margin: 0 auto;
+}
+
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 900px) {
+  .processGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .processGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.processStep {
+  text-align: center;
+}
+
+.stepNumWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.stepNum {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #5cb8f0;
+  flex-shrink: 0;
+}
+
+.stepContent h3 {
+  color: white;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.stepContent p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Medical-Legal Section ── */
+.legalSection {
+  background: var(--off-white);
+}
+
+.legalGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .legalGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+.legalText p {
+  color: var(--text-light);
+  line-height: 1.7;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+}
+
+.legalDocs {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+}
+
+.legalDocsTitle {
+  font-family: var(--font-serif);
+  color: var(--navy);
+  font-size: 1rem;
+  margin: 0 0 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--gray-100);
+}
+
+.legalItem {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--gray-100);
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.legalItem:last-child {
+  border-bottom: none;
+}
+
+.legalCheck {
+  color: var(--navy);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}

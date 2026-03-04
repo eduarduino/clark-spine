@@ -1,0 +1,100 @@
+/* ===== HERO LIGHT LAYOUT ===== */
+.hero {
+  position: relative;
+  background: var(--white);
+  padding-top: 72px;
+  overflow: hidden;
+}
+.decorBg {
+  position: absolute;
+  top: 0; right: 0;
+  width: 55%; height: 100%;
+  background: radial-gradient(ellipse at 80% 25%, rgba(26,122,191,0.07) 0%, transparent 60%);
+  pointer-events: none;
+}
+.content {
+  padding: 3rem 0 2.75rem;
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(26,122,191,0.08);
+  border: 1px solid rgba(26,122,191,0.18);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.5rem;
+}
+.dot {
+  width: 7px; height: 7px;
+  background: #22c55e;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1;    transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.75); }
+}
+.headline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 5.5vw, 3.75rem);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.13;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.5rem;
+}
+.highlight { color: var(--accent); }
+.sub {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  line-height: 1.75;
+  max-width: 560px;
+  margin: 0 auto 2.25rem;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.875rem;
+  margin-bottom: 0;
+  justify-content: center;
+}
+.statsBar { background: var(--navy); padding: 1.25rem 0; }
+.statsInner { display: flex; align-items: center; justify-content: center; }
+.stat {
+  flex: 1; max-width: 240px;
+  text-align: center;
+  display: flex; flex-direction: column;
+  gap: 0.2rem; padding: 0.25rem 1rem;
+}
+.stat strong {
+  font-family: var(--font-serif);
+  font-size: 1.5rem; font-weight: 700;
+  color: var(--white);
+}
+.stat span {
+  font-size: 0.72rem; font-weight: 500;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+.statDiv { width: 1px; height: 36px; background: rgba(255,255,255,0.15); flex-shrink: 0; }
+@media (max-width: 768px) {
+  .content { padding: 2.5rem 0 2rem; text-align: center; }
+  .sub     { margin-left: auto; margin-right: auto; }
+  .actions { justify-content: center; }
+  .decorBg { display: none; }
+  .stat    { max-width: 50%; }
+}
+@media (max-width: 480px) {
+  .stat    { max-width: 100%; }
+  .statDiv { display: none; }
+}
