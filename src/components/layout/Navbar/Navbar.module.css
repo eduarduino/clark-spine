@@ -18,12 +18,12 @@
 
 .inner {
   width: 100%;
-  /* Align left/right edges with the page .container without capping navbar width */
-  padding: 0 max(1.5rem, calc((100vw - var(--container-max)) / 2 + 1.5rem));
+  padding: 0 2rem;
   height: 72px;
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
+  gap: 2rem;
 }
 
 /* ===== LOGO ===== */
@@ -343,7 +343,7 @@
 /* ===== RESPONSIVE ===== */
 /* At 1100px, tighten nav link padding so Spanish labels don't crowd */
 @media (max-width: 1100px) {
-  .inner { padding: 0 max(1rem, calc((100vw - var(--container-max)) / 2 + 1rem)); }
+  .inner { padding: 0 1.5rem; gap: 1rem; }
   .rightGroup { gap: 0.5rem; }
   .nav a { padding: 0.5rem 0.65rem; }
   .nav { gap: 0.1rem; }
