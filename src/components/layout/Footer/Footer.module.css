@@ -140,6 +140,7 @@
 }
 .bottom a {
   color: var(--inverse-text);
+  white-space: nowrap;
 }
 .bottom a:hover {
   color: var(--inverse-text-bright);
