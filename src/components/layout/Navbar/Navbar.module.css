@@ -19,12 +19,12 @@
 .inner {
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 2.5rem;
+  padding: 0 3rem;
   height: 72px;
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
-  gap: 1.75rem;
+  gap: 2.25rem;
 }
 
 /* ===== LOGO ===== */
@@ -70,7 +70,7 @@
 .nav {
   display: flex;
   align-items: center;
-  gap: 0;
+  gap: 0.2rem;
   flex: 1;
   justify-content: center;
   flex-wrap: nowrap;
@@ -82,7 +82,7 @@
   font-weight: 500;
   color: var(--gray-800);
   text-decoration: none;
-  padding: 0.5rem 0.78rem;
+  padding: 0.5rem 1rem;
   border-radius: var(--radius-sm);
   transition: all 0.2s ease;
   white-space: nowrap;
@@ -150,14 +150,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 32px;
-  height: 24px;
-  padding: 0 0.6rem;
+  min-width: 36px;
+  height: 28px;
+  padding: 0 0.75rem;
   background: transparent;
   border: none;
   border-radius: var(--radius-full);
   font-family: var(--font-sans);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   color: var(--text-light);
@@ -286,7 +286,7 @@
   gap: 0.5rem;
   background: var(--navy);
   color: var(--white) !important;
-  padding: 0.6rem 1.1rem;
+  padding: 0.65rem 1.4rem;
   border-radius: var(--radius-full);
   font-size: 0.85rem;
   font-weight: 600;
@@ -335,9 +335,16 @@
 }
 
 /* ===== RESPONSIVE ===== */
+/* At 1100px, tighten nav link padding so Spanish labels don't crowd */
+@media (max-width: 1100px) {
+  .inner { padding: 0 2rem; gap: 1.5rem; }
+  .nav a { padding: 0.5rem 0.65rem; }
+  .nav { gap: 0.1rem; }
+}
+
 @media (max-width: 1000px) {
   .phoneBtn span { display: none; }
-  .phoneBtn { padding: 0.6rem 0.75rem; }
+  .phoneBtn { padding: 0.65rem 0.85rem; }
   .phoneBtn svg { font-size: 0.9rem; }
 }
 
