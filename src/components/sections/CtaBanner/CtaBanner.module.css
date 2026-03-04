@@ -1,5 +1,5 @@
 .banner {
-  background: linear-gradient(135deg, var(--inverse-bg), var(--inverse-bg2));
+  background: linear-gradient(135deg, var(--inverse-bg) 0%, var(--inverse-bg2) 100%);
   padding: 4rem 1.5rem;
 }
 
