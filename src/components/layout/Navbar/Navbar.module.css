@@ -18,9 +18,8 @@
 
 .inner {
   width: 100%;
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 1.5rem;
+  /* Align left/right edges with the page .container without capping navbar width */
+  padding: 0 max(1.5rem, calc((100vw - var(--container-max)) / 2 + 1.5rem));
   height: 72px;
   display: flex;
   align-items: center;
@@ -75,7 +74,6 @@
   flex: 1;
   justify-content: center;
   flex-wrap: nowrap;
-  overflow: hidden;
 }
 
 .nav a {
@@ -338,7 +336,7 @@
 /* ===== RESPONSIVE ===== */
 /* At 1100px, tighten nav link padding so Spanish labels don't crowd */
 @media (max-width: 1100px) {
-  .inner { padding: 0 1.5rem; gap: 1.5rem; }
+  .inner { padding: 0 max(1rem, calc((100vw - var(--container-max)) / 2 + 1rem)); gap: 1.5rem; }
   .nav a { padding: 0.5rem 0.65rem; }
   .nav { gap: 0.1rem; }
 }
