@@ -17,6 +17,8 @@ export default defineConfig(({ mode }) => ({
 
   build: {
     minify: 'esbuild',
+    // Keep old bundles so cached index.html on mobile still resolves its CSS/JS
+    emptyOutDir: false,
     // Never expose source maps in production — they reveal your full source code
     sourcemap: false,
     esbuildOptions: {
