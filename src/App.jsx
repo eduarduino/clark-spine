@@ -16,7 +16,7 @@ export default function App() {
   return (
     <ErrorBoundary>
     <LanguageProvider>
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <div className="app-root">
         <Navbar />
         <Routes>
