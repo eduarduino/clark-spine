@@ -348,6 +348,18 @@
   .controls { margin-left: auto; }
   .inner { padding: 0 1rem; gap: 0.5rem; }
 
+  /*
+   * CRITICAL: Remove backdrop-filter from header on mobile.
+   * backdrop-filter / -webkit-backdrop-filter creates a new containing block
+   * in WebKit/Safari — meaning position:fixed children (our drawer) get sized
+   * relative to the 72px header instead of the full viewport.
+   */
+  .header {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: var(--header-bg-solid, var(--white));
+  }
+
   /* ── Backdrop overlay ── */
   .navOverlay {
     display: block;
