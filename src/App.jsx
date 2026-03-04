@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { LanguageProvider } from '@/context/LanguageContext'
+import { ThemeProvider } from '@/context/ThemeContext'
 import ErrorBoundary from '@/components/ErrorBoundary/ErrorBoundary'
 import Navbar from '@/components/layout/Navbar/Navbar'
 import Footer from '@/components/layout/Footer/Footer'
@@ -15,6 +16,7 @@ import './App.css'
 export default function App() {
   return (
     <ErrorBoundary>
+    <ThemeProvider>
     <LanguageProvider>
     <BrowserRouter basename={import.meta.env.BASE_URL}>
       <div className="app-root">
@@ -32,6 +34,7 @@ export default function App() {
       </div>
     </BrowserRouter>
     </LanguageProvider>
+    </ThemeProvider>
     </ErrorBoundary>
   )
 }

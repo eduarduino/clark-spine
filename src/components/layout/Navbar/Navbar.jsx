@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { Phone, Menu, X } from 'lucide-react'
+import { Phone, Menu, X, Sun, Moon } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
+import { useTheme } from '@/context/ThemeContext'
 import styles from './Navbar.module.css'
 
 export default function Navbar() {
@@ -9,6 +10,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
   const { lang, toggle, t } = useLanguage()
+  const { isDark, toggleTheme } = useTheme()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -28,8 +30,8 @@ export default function Navbar() {
           <svg className={styles.spineIcon} viewBox="0 0 30 56" width="30" height="56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <defs>
               <linearGradient id="lsg" x1="0" y1="0" x2="0" y2="56" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#1a7abf" />
-                <stop offset="100%" stopColor="#0a2342" />
+                <stop offset="0%" stopColor="var(--spine-c1, #1a7abf)" />
+                <stop offset="100%" stopColor="var(--spine-c2, #0a2342)" />
               </linearGradient>
             </defs>
             {/* C3 body + spinous process + spinal canal + disc */}
@@ -95,15 +97,25 @@ export default function Navbar() {
           <NavLink to="/contact" className={({ isActive }) => isActive ? styles.active : ''}>{t.nav.contact}</NavLink>
         </nav>
 
-        <button
-          className={styles.langToggle}
-          onClick={toggle}
-          aria-label={lang === 'en' ? 'Cambiar a Español' : 'Switch to English'}
-          title={lang === 'en' ? 'Español' : 'English'}
-        >
-          <span className={styles.langFlag}>{lang === 'en' ? '🇪🇸' : '🇺🇸'}</span>
-          <span className={styles.langLabel}>{lang === 'en' ? 'ES' : 'EN'}</span>
-        </button>
+        <div className={styles.controls}>
+          <button
+            className={styles.langToggle}
+            onClick={toggle}
+            aria-label={lang === 'en' ? 'Cambiar a Español' : 'Switch to English'}
+          >
+            <span className={lang === 'en' ? styles.langOn : styles.langOff}>EN</span>
+            <span className={lang === 'es' ? styles.langOn : styles.langOff}>ES</span>
+          </button>
+          <button
+            className={styles.themeToggle}
+            onClick={toggleTheme}
+            aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            {isDark
+              ? <Sun size={15} aria-hidden="true" />
+              : <Moon size={15} aria-hidden="true" />}
+          </button>
+        </div>
 
         <a href="tel:9084979440" className={styles.phoneBtn}>
           <Phone size={15} aria-hidden="true" />
