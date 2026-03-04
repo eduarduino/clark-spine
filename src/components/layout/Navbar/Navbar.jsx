@@ -39,7 +39,7 @@ export default function Navbar() {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.inner}>
         <Link to="/" className={styles.logo} aria-label="Clark Spine and Pain Relief — Home">
-          <svg className={styles.spineIcon} viewBox="0 0 30 56" width="30" height="56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <svg className={styles.spineIcon} viewBox="0 0 24 56" width="24" height="56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <defs>
               <linearGradient id="lsg" x1="0" y1="0" x2="0" y2="56" gradientUnits="userSpaceOnUse">
                 <stop offset="0%" stopColor="var(--spine-c1, #1a7abf)" />
