@@ -32,7 +32,7 @@
   align-items: center;
   text-decoration: none;
   flex-shrink: 0;
-  gap: 0;
+  gap: 0.35rem;
 }
 
 .spineIcon {
