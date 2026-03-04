@@ -109,7 +109,7 @@ export default function Navbar() {
               aria-label={lang === 'en' ? 'Cambiar a Español' : 'Switch to English'}
             >
               <Globe size={12} aria-hidden="true" />
-              <span style={{marginLeft: '0.3rem'}}>{lang === 'en' ? 'EN' : 'ES'}</span>
+              <span style={{marginLeft: '0.3rem'}}>{lang === 'en' ? 'ES' : 'EN'}</span>
             </button>
             <span className={styles.pillDiv} aria-hidden="true" />
             <button
