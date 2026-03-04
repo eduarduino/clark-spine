@@ -17,7 +17,7 @@
 }
 
 .inner {
-  /* No max-width — navbar fills the full viewport width edge-to-edge */
+  width: 100%;
   padding: 0 3rem;
   height: 72px;
   display: flex;
