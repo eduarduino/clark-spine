@@ -116,42 +116,44 @@ export default function Navbar() {
           </a>
         </nav>
 
-        <div className={styles.controls}>
-          <div className={styles.pill} role="group" aria-label="Language and theme">
-            <button
-              className={`${styles.seg} ${styles.segActive}`}
-              onClick={toggle}
-              aria-label={lang === 'en' ? 'Cambiar a Español' : 'Switch to English'}
-            >
-              <Globe size={12} aria-hidden="true" />
-              <span style={{marginLeft: '0.3rem'}}>{lang === 'en' ? 'ES' : 'EN'}</span>
-            </button>
-            <span className={styles.pillDiv} aria-hidden="true" />
-            <button
-              className={styles.seg}
-              onClick={toggleTheme}
-              aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-            >
-              {isDark
-                ? <><Sun size={12} aria-hidden="true" /><span style={{marginLeft:'0.3rem'}}>Light</span></>
-                : <><Moon size={12} aria-hidden="true" /><span style={{marginLeft:'0.3rem'}}>Dark</span></>}
-            </button>
+        <div className={styles.rightGroup}>
+          <div className={styles.controls}>
+            <div className={styles.pill} role="group" aria-label="Language and theme">
+              <button
+                className={`${styles.seg} ${styles.segActive}`}
+                onClick={toggle}
+                aria-label={lang === 'en' ? 'Cambiar a Español' : 'Switch to English'}
+              >
+                <Globe size={12} aria-hidden="true" />
+                <span style={{marginLeft: '0.3rem'}}>{lang === 'en' ? 'ES' : 'EN'}</span>
+              </button>
+              <span className={styles.pillDiv} aria-hidden="true" />
+              <button
+                className={styles.seg}
+                onClick={toggleTheme}
+                aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+              >
+                {isDark
+                  ? <><Sun size={12} aria-hidden="true" /><span style={{marginLeft:'0.3rem'}}>Light</span></>
+                  : <><Moon size={12} aria-hidden="true" /><span style={{marginLeft:'0.3rem'}}>Dark</span></>}
+              </button>
+            </div>
           </div>
+
+          <a href="tel:9084979440" className={styles.phoneBtn}>
+            <Phone size={15} aria-hidden="true" />
+            <span>(908) 497-9440</span>
+          </a>
+
+          <button
+            className={styles.burger}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={menuOpen}
+          >
+            {menuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
         </div>
-
-        <a href="tel:9084979440" className={styles.phoneBtn}>
-          <Phone size={15} aria-hidden="true" />
-          <span>(908) 497-9440</span>
-        </a>
-
-        <button
-          className={styles.burger}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-          aria-expanded={menuOpen}
-        >
-          {menuOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
       </div>
     </header>
     </>
