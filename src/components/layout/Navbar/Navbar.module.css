@@ -101,21 +101,26 @@
 
 /* Auto Accidents accent link */
 .accentLink {
-  color: var(--navy) !important;
+  color: #ffffff !important;
   font-weight: 600 !important;
-  background: rgba(10, 35, 66, 0.06) !important;
-  border: 1px solid rgba(10, 35, 66, 0.15) !important;
+  background: var(--navy) !important;
+  border: 1px solid var(--navy) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
 }
 
 .accentLink:hover {
-  background: var(--navy) !important;
-  color: white !important;
+  background: var(--navy-light, #1a3f6f) !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(10,35,66,0.25) !important;
 }
 
 .accentLink.active {
-  background: var(--navy) !important;
-  color: white !important;
-  border-color: var(--navy) !important;
+  background: var(--accent) !important;
+  color: #ffffff !important;
+  border-color: var(--accent) !important;
 }
 
 /* ===== CONTROLS GROUP — unified EN | ES | [icon] pill ===== */

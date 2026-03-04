@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { Phone, Menu, X, Sun, Moon, Globe } from 'lucide-react'
+import { Phone, Menu, X, Sun, Moon, Globe, AlertTriangle } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import { useTheme } from '@/context/ThemeContext'
 import styles from './Navbar.module.css'
@@ -92,7 +92,10 @@ export default function Navbar() {
           <NavLink to="/" className={({ isActive }) => isActive ? styles.active : ''} end>{t.nav.home}</NavLink>
           <NavLink to="/about" className={({ isActive }) => isActive ? styles.active : ''}>{t.nav.about}</NavLink>
           <NavLink to="/services" className={({ isActive }) => isActive ? styles.active : ''}>{t.nav.services}</NavLink>
-          <NavLink to="/auto-accidents" className={({ isActive }) => `${styles.accentLink} ${isActive ? styles.active : ''}`}>{t.nav.autoAccidents}</NavLink>
+          <NavLink to="/auto-accidents" className={({ isActive }) => `${styles.accentLink} ${isActive ? styles.active : ''}`}>
+            <AlertTriangle size={13} aria-hidden="true" />
+            {t.nav.autoAccidents}
+          </NavLink>
           <NavLink to="/patient-center" className={({ isActive }) => isActive ? styles.active : ''}>{t.nav.patientCenter}</NavLink>
           <NavLink to="/contact" className={({ isActive }) => isActive ? styles.active : ''}>{t.nav.contact}</NavLink>
           <a href="tel:9084979440" className={styles.navPhone}>
