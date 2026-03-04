@@ -89,6 +89,12 @@
 .statDiv { width: 1px; height: 36px; background: var(--inverse-border); flex-shrink: 0; }
 @media (max-width: 768px) {
   .content { padding: 2.5rem 0 2rem; text-align: center; }
+  /* Scale down headline to prevent long Spanish words from overflowing */
+  .headline {
+    font-size: clamp(1.3rem, 5.5vw, 2rem);
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
   .sub     { margin-left: auto; margin-right: auto; }
   .actions { justify-content: center; }
   .decorBg { display: none; }

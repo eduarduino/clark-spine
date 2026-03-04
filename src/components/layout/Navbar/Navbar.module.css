@@ -19,12 +19,12 @@
 .inner {
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 2.5rem;
   height: 72px;
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
-  gap: 1rem;
+  gap: 1.75rem;
 }
 
 /* ===== LOGO ===== */
@@ -82,7 +82,7 @@
   font-weight: 500;
   color: var(--gray-800);
   text-decoration: none;
-  padding: 0.5rem 0.55rem;
+  padding: 0.5rem 0.78rem;
   border-radius: var(--radius-sm);
   transition: all 0.2s ease;
   white-space: nowrap;
