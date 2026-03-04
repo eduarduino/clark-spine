@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig(({ mode }) => ({
+  base: process.env.GITHUB_PAGES ? '/clark-spine/' : '/',
   plugins: [react()],
 
   resolve: {
