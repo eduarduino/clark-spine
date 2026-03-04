@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { Phone, Menu, X, Sun, Moon } from 'lucide-react'
+import { Phone, Menu, X, Sun, Moon, Globe } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import { useTheme } from '@/context/ThemeContext'
 import styles from './Navbar.module.css'
@@ -107,7 +107,10 @@ export default function Navbar() {
               className={`${styles.seg} ${styles.segActive}`}
               onClick={toggle}
               aria-label={lang === 'en' ? 'Cambiar a Español' : 'Switch to English'}
-            >{lang === 'en' ? 'ES' : 'EN'}</button>
+            >
+              <Globe size={12} aria-hidden="true" />
+              <span style={{marginLeft: '0.3rem'}}>{lang === 'en' ? 'EN' : 'ES'}</span>
+            </button>
             <span className={styles.pillDiv} aria-hidden="true" />
             <button
               className={styles.seg}
