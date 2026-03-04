@@ -1,25 +1,166 @@
-<svg viewBox="0 0 280 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Clark Spine and Pain Relief">
-  <!-- Left accent bar -->
-  <rect x="0" y="0" width="4" height="52" rx="2" fill="url(#barGrad)"/>
+<svg viewBox="0 0 294 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Clark Spine and Pain Relief">
   <defs>
-    <linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="52" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#1a7abf"/>
+    <linearGradient id="sg" x1="0" y1="0" x2="0" y2="52" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#1a7abf"/>
       <stop offset="100%" stop-color="#0a2342"/>
     </linearGradient>
   </defs>
 
-  <!-- "Clark" — navy -->
-  <text x="16" y="34"
+  <!-- ===== ANATOMICAL SPINE (anterior view) =====
+       Each vertebra is a SINGLE path: body + integrated transverse
+       process wings drawn with cubic bezier curves.
+       Taper: cervical (narrow) → lumbar (wide) → sacrum (fused base)
+  -->
+
+  <!-- C1 — cervical, narrowest -->
+  <path fill="url(#sg)" d="M10.2,2.8 Q9.5,2.8 9.5,3.5 L9.5,4.1 C7.2,4.1 7.2,5.9 9.5,5.9 L9.5,6.5 Q9.5,7.2 10.2,7.2 L15.8,7.2 Q16.5,7.2 16.5,6.5 L16.5,5.9 C18.8,5.9 18.8,4.1 16.5,4.1 L16.5,3.5 Q16.5,2.8 15.8,2.8 Z"/>
+  <ellipse cx="13" cy="5" rx="0.9" ry="0.7" fill="white" opacity="0.22"/>
+
+  <!-- Disc C1–C2 -->
+  <ellipse cx="13" cy="9" rx="3.4" ry="1.1" fill="#6bbde0" opacity="0.72"/>
+
+  <!-- C2 -->
+  <path fill="url(#sg)" d="M9.7,10.8 Q9.0,10.8 9.0,11.5 L9.0,12.1 C6.5,12.1 6.5,13.9 9.0,13.9 L9.0,14.5 Q9.0,15.2 9.7,15.2 L16.3,15.2 Q17.0,15.2 17.0,14.5 L17.0,13.9 C19.5,13.9 19.5,12.1 17.0,12.1 L17.0,11.5 Q17.0,10.8 16.3,10.8 Z"/>
+  <ellipse cx="13" cy="13" rx="0.9" ry="0.7" fill="white" opacity="0.22"/>
+
+  <!-- Disc C2–T -->
+  <ellipse cx="13" cy="17" rx="3.8" ry="1.1" fill="#6bbde0" opacity="0.72"/>
+
+  <!-- T — thoracic -->
+  <path fill="url(#sg)" d="M9.2,18.8 Q8.5,18.8 8.5,19.5 L8.5,20.1 C5.8,20.1 5.8,21.9 8.5,21.9 L8.5,22.5 Q8.5,23.2 9.2,23.2 L16.8,23.2 Q17.5,23.2 17.5,22.5 L17.5,21.9 C20.2,21.9 20.2,20.1 17.5,20.1 L17.5,19.5 Q17.5,18.8 16.8,18.8 Z"/>
+  <ellipse cx="13" cy="21" rx="1.0" ry="0.7" fill="white" opacity="0.22"/>
+
+  <!-- Disc T–L -->
+  <ellipse cx="13" cy="25" rx="4.3" ry="1.1" fill="#6bbde0" opacity="0.72"/>
+
+  <!-- L1 — lumbar -->
+  <path fill="url(#sg)" d="M8.7,26.8 Q8.0,26.8 8.0,27.5 L8.0,28.1 C5.2,28.1 5.2,29.9 8.0,29.9 L8.0,30.5 Q8.0,31.2 8.7,31.2 L17.3,31.2 Q18.0,31.2 18.0,30.5 L18.0,29.9 C20.8,29.9 20.8,28.1 18.0,28.1 L18.0,27.5 Q18.0,26.8 17.3,26.8 Z"/>
+  <ellipse cx="13" cy="29" rx="1.1" ry="0.7" fill="white" opacity="0.22"/>
+
+  <!-- Disc L1–L2 -->
+  <ellipse cx="13" cy="33" rx="4.8" ry="1.1" fill="#6bbde0" opacity="0.72"/>
+
+  <!-- L2 — widest lumbar -->
+  <path fill="url(#sg)" d="M8.2,34.8 Q7.5,34.8 7.5,35.5 L7.5,36.1 C4.7,36.1 4.7,37.9 7.5,37.9 L7.5,38.5 Q7.5,39.2 8.2,39.2 L17.8,39.2 Q18.5,39.2 18.5,38.5 L18.5,37.9 C21.3,37.9 21.3,36.1 18.5,36.1 L18.5,35.5 Q18.5,34.8 17.8,34.8 Z"/>
+  <ellipse cx="13" cy="37" rx="1.1" ry="0.7" fill="white" opacity="0.22"/>
+
+  <!-- Sacrum — fused triangular base, no free processes -->
+  <path fill="url(#sg)" d="M8.0,41.5 Q7.0,41.5 7.0,42.3 L6.2,46.5 Q6.0,48.5 8.5,48.5 L17.5,48.5 Q20.0,48.5 19.8,46.5 L19.0,42.3 Q19.0,41.5 18.0,41.5 Z"/>
+
+  <!-- ===== TEXT ===== -->
+  <text x="29" y="34"
     font-family="Georgia, 'Times New Roman', serif"
     font-size="34" font-weight="700" fill="#0a2342" letter-spacing="-0.5">Clark</text>
 
-  <!-- "Spine" — accent blue -->
-  <text x="105" y="34"
+  <text x="118" y="34"
     font-family="Georgia, 'Times New Roman', serif"
     font-size="34" font-weight="700" fill="#1a7abf" letter-spacing="-0.5"> Spine</text>
 
-  <!-- Subtitle -->
-  <text x="17" y="49"
+  <text x="29" y="49"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="10" font-weight="400" fill="#5a6a7e" letter-spacing="2.5">AND PAIN RELIEF</text>
+</svg>
+
+  <!-- ===== SPINE (anterior view, cervical→lumbar taper) ===== -->
+
+  <!-- C1 — cervical, narrowest -->
+  <ellipse cx="13" cy="4.5"  rx="4.5" ry="2.8" fill="url(#spineGrad)"/>
+  <ellipse cx="5.5" cy="4.5" rx="3.8" ry="1.3" fill="url(#spineGrad)" transform="rotate(-20 5.5 4.5)"/>
+  <ellipse cx="20.5" cy="4.5" rx="3.8" ry="1.3" fill="url(#spineGrad)" transform="rotate(20 20.5 4.5)"/>
+  <!-- Disc -->
+  <ellipse cx="13" cy="8.5"  rx="4.2" ry="1.0" fill="url(#discGrad)"/>
+
+  <!-- C2 -->
+  <ellipse cx="13" cy="12.5" rx="5"   ry="3.0" fill="url(#spineGrad)"/>
+  <ellipse cx="5"  cy="12.5" rx="3.8" ry="1.3" fill="url(#spineGrad)" transform="rotate(-17 5 12.5)"/>
+  <ellipse cx="21" cy="12.5" rx="3.8" ry="1.3" fill="url(#spineGrad)" transform="rotate(17 21 12.5)"/>
+  <!-- Disc -->
+  <ellipse cx="13" cy="17"   rx="4.7" ry="1.0" fill="url(#discGrad)"/>
+
+  <!-- T — thoracic -->
+  <ellipse cx="13" cy="21.5" rx="5.5" ry="3.3" fill="url(#spineGrad)"/>
+  <ellipse cx="4.5" cy="21.5" rx="3.8" ry="1.3" fill="url(#spineGrad)" transform="rotate(-13 4.5 21.5)"/>
+  <ellipse cx="21.5" cy="21.5" rx="3.8" ry="1.3" fill="url(#spineGrad)" transform="rotate(13 21.5 21.5)"/>
+  <!-- Disc -->
+  <ellipse cx="13" cy="26"   rx="5.2" ry="1.0" fill="url(#discGrad)"/>
+
+  <!-- L — lumbar -->
+  <ellipse cx="13" cy="30.5" rx="6"   ry="3.5" fill="url(#spineGrad)"/>
+  <ellipse cx="4"  cy="30.5" rx="3.8" ry="1.3" fill="url(#spineGrad)" transform="rotate(-10 4 30.5)"/>
+  <ellipse cx="22" cy="30.5" rx="3.8" ry="1.3" fill="url(#spineGrad)" transform="rotate(10 22 30.5)"/>
+  <!-- Disc -->
+  <ellipse cx="13" cy="35.5" rx="5.5" ry="1.0" fill="url(#discGrad)"/>
+
+  <!-- L2 — widest -->
+  <ellipse cx="13" cy="40"   rx="6.5" ry="3.75" fill="url(#spineGrad)"/>
+  <ellipse cx="4"  cy="40"   rx="3.8" ry="1.3" fill="url(#spineGrad)" transform="rotate(-8 4 40)"/>
+  <ellipse cx="22" cy="40"   rx="3.8" ry="1.3" fill="url(#spineGrad)" transform="rotate(8 22 40)"/>
+
+  <!-- Sacrum — wide base, no processes -->
+  <ellipse cx="13" cy="46.5" rx="5.5" ry="2.5" fill="url(#spineGrad)"/>
+
+  <!-- ===== TEXT ===== -->
+  <text x="29" y="34"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="34" font-weight="700" fill="#0a2342" letter-spacing="-0.5">Clark</text>
+
+  <text x="118" y="34"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="34" font-weight="700" fill="#1a7abf" letter-spacing="-0.5"> Spine</text>
+
+  <text x="29" y="49"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="10" font-weight="400" fill="#5a6a7e" letter-spacing="2.5">AND PAIN RELIEF</text>
+</svg>
+
+  <!-- ===== SPINE (front/anterior view, cervical→lumbar taper) ===== -->
+
+  <!-- C1 — cervical, narrowest -->
+  <ellipse cx="9" cy="4.5"  rx="4.5" ry="2.8" fill="url(#spineGrad)"/>
+  <ellipse cx="1.5" cy="4.5" rx="3.8" ry="1.3" fill="url(#spineGrad)" transform="rotate(-20 1.5 4.5)"/>
+  <ellipse cx="16.5" cy="4.5" rx="3.8" ry="1.3" fill="url(#spineGrad)" transform="rotate(20 16.5 4.5)"/>
+  <!-- Disc -->
+  <ellipse cx="9" cy="8.5"  rx="4.2" ry="1.0" fill="url(#discGrad)"/>
+
+  <!-- C2 -->
+  <ellipse cx="9" cy="12.5" rx="5"   ry="3.0" fill="url(#spineGrad)"/>
+  <ellipse cx="1" cy="12.5" rx="3.8" ry="1.3" fill="url(#spineGrad)" transform="rotate(-17 1 12.5)"/>
+  <ellipse cx="17" cy="12.5" rx="3.8" ry="1.3" fill="url(#spineGrad)" transform="rotate(17 17 12.5)"/>
+  <!-- Disc -->
+  <ellipse cx="9" cy="17"   rx="4.7" ry="1.0" fill="url(#discGrad)"/>
+
+  <!-- T — thoracic, mid -->
+  <ellipse cx="9" cy="21.5" rx="5.5" ry="3.3" fill="url(#spineGrad)"/>
+  <ellipse cx="0.5" cy="21.5" rx="3.8" ry="1.3" fill="url(#spineGrad)" transform="rotate(-14 0.5 21.5)"/>
+  <ellipse cx="17.5" cy="21.5" rx="3.8" ry="1.3" fill="url(#spineGrad)" transform="rotate(14 17.5 21.5)"/>
+  <!-- Disc -->
+  <ellipse cx="9" cy="26"   rx="5.2" ry="1.0" fill="url(#discGrad)"/>
+
+  <!-- L — lumbar, wide -->
+  <ellipse cx="9" cy="30.5" rx="6"   ry="3.5" fill="url(#spineGrad)"/>
+  <ellipse cx="0" cy="30.5" rx="3.8" ry="1.3" fill="url(#spineGrad)" transform="rotate(-10 0 30.5)"/>
+  <ellipse cx="18" cy="30.5" rx="3.8" ry="1.3" fill="url(#spineGrad)" transform="rotate(10 18 30.5)"/>
+  <!-- Disc -->
+  <ellipse cx="9" cy="35.5" rx="5.5" ry="1.0" fill="url(#discGrad)"/>
+
+  <!-- L2 — widest lumbar -->
+  <ellipse cx="9" cy="40"   rx="6.5" ry="3.75" fill="url(#spineGrad)"/>
+  <ellipse cx="0" cy="40"   rx="3.8" ry="1.3" fill="url(#spineGrad)" transform="rotate(-8 0 40)"/>
+  <ellipse cx="18" cy="40"  rx="3.8" ry="1.3" fill="url(#spineGrad)" transform="rotate(8 18 40)"/>
+
+  <!-- Sacrum — wide base, no processes -->
+  <ellipse cx="9" cy="46.5" rx="5.5" ry="2.5" fill="url(#spineGrad)"/>
+
+  <!-- ===== TEXT ===== -->
+  <text x="24" y="34"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="34" font-weight="700" fill="#0a2342" letter-spacing="-0.5">Clark</text>
+
+  <text x="113" y="34"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="34" font-weight="700" fill="#1a7abf" letter-spacing="-0.5"> Spine</text>
+
+  <text x="25" y="49"
     font-family="Georgia, 'Times New Roman', serif"
     font-size="10" font-weight="400" fill="#5a6a7e" letter-spacing="2.5">AND PAIN RELIEF</text>
 </svg>
