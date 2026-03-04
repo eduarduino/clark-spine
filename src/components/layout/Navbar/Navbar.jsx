@@ -104,18 +104,10 @@ export default function Navbar() {
         <div className={styles.controls}>
           <div className={styles.pill} role="group" aria-label="Language and theme">
             <button
-              className={`${styles.seg} ${lang === 'en' ? styles.segActive : ''}`}
-              onClick={lang !== 'en' ? toggle : undefined}
-              aria-label="Switch to English"
-              aria-pressed={lang === 'en'}
-            >EN</button>
-            <span className={styles.pillDiv} aria-hidden="true" />
-            <button
-              className={`${styles.seg} ${lang === 'es' ? styles.segActive : ''}`}
-              onClick={lang !== 'es' ? toggle : undefined}
-              aria-label="Cambiar a Español"
-              aria-pressed={lang === 'es'}
-            >ES</button>
+              className={`${styles.seg} ${styles.segActive}`}
+              onClick={toggle}
+              aria-label={lang === 'en' ? 'Cambiar a Español' : 'Switch to English'}
+            >{lang === 'en' ? 'EN' : 'ES'}</button>
             <span className={styles.pillDiv} aria-hidden="true" />
             <button
               className={styles.seg}
