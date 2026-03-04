@@ -95,6 +95,10 @@ export default function Navbar() {
           <NavLink to="/auto-accidents" className={({ isActive }) => `${styles.accentLink} ${isActive ? styles.active : ''}`}>{t.nav.autoAccidents}</NavLink>
           <NavLink to="/patient-center" className={({ isActive }) => isActive ? styles.active : ''}>{t.nav.patientCenter}</NavLink>
           <NavLink to="/contact" className={({ isActive }) => isActive ? styles.active : ''}>{t.nav.contact}</NavLink>
+          <a href="tel:9084979440" className={styles.navPhone}>
+            <Phone size={16} aria-hidden="true" />
+            <span>(908) 497-9440</span>
+          </a>
         </nav>
 
         <div className={styles.controls}>
@@ -139,8 +143,6 @@ export default function Navbar() {
           {menuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
-
-      {menuOpen && <div className={styles.overlay} onClick={() => setMenuOpen(false)} aria-hidden="true" />}
     </header>
   )
 }

@@ -154,9 +154,18 @@
 }
 
 @media (max-width: 600px) {
+  .top { padding: 2.5rem 0 2rem; }
   .grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.75rem 1rem;
+  }
+  /* Brand spans full width */
+  .brand {
+    grid-column: 1 / -1;
+  }
+  /* Contact Us spans full width */
+  .col:last-child {
+    grid-column: 1 / -1;
   }
   .bottom .container {
     flex-direction: column;
