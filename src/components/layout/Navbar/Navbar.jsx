@@ -38,6 +38,7 @@ export default function Navbar() {
     />
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.inner}>
+        <div className={styles.innerWrap}>
         <Link to="/" className={styles.logo} aria-label="Clark Spine and Pain Relief — Home">
           <svg className={styles.spineIcon} viewBox="0 0 24 56" width="24" height="56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <defs>
@@ -153,6 +154,7 @@ export default function Navbar() {
           >
             {menuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
+        </div>
         </div>
       </div>
     </header>
