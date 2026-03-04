@@ -118,8 +118,8 @@ export default function Navbar() {
               aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
             >
               {isDark
-                ? <><Sun size={12} aria-hidden="true" /><span style={{marginLeft:'0.3rem'}}>Light</span></>
-                : <><Moon size={12} aria-hidden="true" /><span style={{marginLeft:'0.3rem'}}>Dark</span></>}
+                ? <Sun size={13} aria-hidden="true" />
+                : <Moon size={13} aria-hidden="true" />}
             </button>
           </div>
         </div>
