@@ -15,23 +15,13 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 18
-
-      - run: npm install
-
-      - run: npm run build
-        env:
-          GITHUB_PAGES: true
 
       - uses: actions/configure-pages@v5
 
