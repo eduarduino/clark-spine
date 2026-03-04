@@ -22,8 +22,8 @@
   --gray-600: #4a6080;
   --gray-800: #1e2f44;
   --text-dark: #0d1f35;
-  --text-body: #374151;
-  --text-light: #6b7280;
+  --text-body: #2d3a4a;   /* was #374151 — darker for contrast */
+  --text-light: #4a5a6d;  /* was #6b7280 — WCAG AA+ on white */
   --danger: #dc2626;
   --danger-bg: #fef2f2;
 
@@ -51,14 +51,16 @@
 
 html {
   scroll-behavior: smooth;
+  /* 17px base — all rem values scale up, respects user zoom */
+  font-size: 17px;
 }
 
 body {
   font-family: var(--font-sans);
   color: var(--text-body);
   background-color: var(--white);
-  line-height: 1.6;
-  font-size: 16px;
+  line-height: 1.75;
+  font-size: 1rem;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -71,7 +73,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-  line-height: 1.75;
+  line-height: 1.85;
 }
 
 a {
@@ -128,12 +130,13 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.85rem 1.75rem;
+  padding: 0.95rem 2rem;
+  min-height: 52px;           /* 44px minimum touch target + breathing room */
   border-radius: var(--radius-full);
   font-family: var(--font-sans);
-  font-size: 0.9rem;
+  font-size: 1rem;            /* was 0.9rem */
   font-weight: 600;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   cursor: pointer;
   border: none;
   transition: all 0.25s ease;
@@ -212,7 +215,7 @@ img {
 }
 
 .form-group label {
-  font-size: 0.875rem;
+  font-size: 1rem;             /* was 0.875rem */
   font-weight: 600;
   color: var(--text-dark);
 }
@@ -220,11 +223,12 @@ img {
 .form-group input,
 .form-group textarea,
 .form-group select {
-  padding: 0.85rem 1rem;
+  padding: 0.95rem 1.1rem;   /* was 0.85rem 1rem */
+  min-height: 52px;
   border: 1.5px solid var(--gray-200);
   border-radius: var(--radius-md);
   font-family: var(--font-sans);
-  font-size: 0.95rem;
+  font-size: 1rem;             /* was 0.95rem — prevents iOS auto-zoom */
   color: var(--text-dark);
   background: var(--white);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -235,7 +239,7 @@ img {
 .form-group textarea:focus,
 .form-group select:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(26,122,191,0.12);
+  box-shadow: 0 0 0 4px rgba(26,122,191,0.18); /* was 3px / 0.12 — more visible */
 }
 
 /* Live validation states — triggered by aria-invalid attribute */

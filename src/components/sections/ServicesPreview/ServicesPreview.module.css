@@ -7,8 +7,10 @@
   margin-bottom: 3rem;
 }
 
-.header .section-subtitle {
+.header :global(.section-subtitle) {
   margin: 0 auto;
+  text-align: center;
+  max-width: 680px;
 }
 
 .grid {

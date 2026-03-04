@@ -1,8 +1,8 @@
 # Clark Spine and Pain Relief — Website Project
 
 **Package:** `clarkspine-redesign`  
-**Version:** `0.1.0-alpha.1`  
-**Current Status:** Alpha 1 — tagged `v0.1.0-alpha.1`  
+**Version:** `0.1.0-alpha.2`  
+**Current Status:** Alpha 2 — tagged `v0.1.0-alpha.2`  
 **Stack:** React 18 + Vite 6 + CSS Modules  
 **Last Updated:** March 4, 2026
 
@@ -220,6 +220,24 @@ Defined in `src/index.css` as CSS custom properties:
 --font-sans:   'Inter', system-ui, sans-serif
 ```
 
+### Accessibility / Readability Defaults (alpha.2)
+
+Updated in `src/index.css` to improve legibility for older users:
+
+| Property | Before | After | Reason |
+|---|---|---|---|
+| `html { font-size }` | `16px` | `17px` | All `rem` values scale up proportionally; respects browser zoom |
+| `body { line-height }` | `1.6` | `1.75` | More space between lines |
+| `p { line-height }` | `1.75` | `1.85` | Extra breathing room for body copy |
+| `--text-body` | `#374151` | `#2d3a4a` | Stronger contrast on white |
+| `--text-light` | `#6b7280` | `#4a5a6d` | Was borderline WCAG AA — now clearly passing |
+| Button `font-size` | `0.9rem` | `1rem` | |
+| Button `min-height` | none | `52px` | 44px minimum touch target |
+| Input `font-size` | `0.95rem` | `1rem` | Prevents iOS auto-zoom on focus |
+| Input `min-height` | none | `52px` | Easier to tap |
+| Form label `font-size` | `0.875rem` | `1rem` | More legible |
+| Focus ring | `3px / 12% opacity` | `4px / 18% opacity` | More visible for keyboard users |
+
 ---
 
 ## 9. Key Design Decisions & Discussion History
@@ -310,9 +328,38 @@ These should be moved to environment variables before production:
 ## 14. Git
 
 ```
-Repository initialized: March 4, 2026
+Repository: https://github.com/eduarduino/clark-spine.git
 Branch: master
-Tag: v0.1.0-alpha.1
+
+Tag: v0.1.0-alpha.2
+Commit: "chore: alpha.2 release — About page redesign, accessibility improvements,
+         i18n-aware validation errors, UI fixes"
+
+Tag: v0.1.0-alpha.1 (previous)
 Commit: "chore: alpha.1 release — bilingual contact form with split name fields,
          dynamic phone formatting, live validation, i18n error messages"
 ```
+
+### Changes since alpha.1
+
+**About page full redesign (`AboutPage.jsx` + `AboutPage.module.css`)**
+- Removed separate dark-navy hero banner and standalone profile section — merged into a single two-column Intro section (bio left, portrait photo right)
+- Photo card gets a left accent stripe and a floating "35+" badge
+- Removed full-width navy info bar — contact info (address, phone, email) moved to a compact card directly below the portrait photo
+- Qualifications section redesigned: 4 icon highlight cards (Palmer Graduate, Trauma Qualified, NJ Licensed, 35+ Years) → two-column visual timeline (career + education/licensure) → navy post-grad topic-tag callout strip
+
+**Global accessibility improvements (`src/index.css`)**
+- Base font size raised from 16px to 17px
+- Body and paragraph line-heights increased
+- `--text-body` and `--text-light` darkened to meet WCAG AA contrast on white
+- Buttons, inputs, and form labels enlarged with minimum 52px touch targets
+- Focus ring widened and opacity increased
+
+**Contact form: language-aware validation (`ContactPage.jsx`)**
+- Added `useEffect` watching `lang` — re-runs `validateField` on all currently-visible errors when EN/ES is toggled, so error messages instantly re-translate without requiring re-interaction
+
+**ServicesPreview subtitle fix (`ServicesPreview.module.css`)**
+- `.section-subtitle` is a global class — the scoped selector was not applying. Fixed with `:global(.section-subtitle)`. Added `text-align: center` and widened `max-width` to 680px.
+
+**Patient Center cleanup (`PatientCenterPage.jsx`)**
+- Removed the "Complete forms in the comfort of your home…" subtitle from the forms section header

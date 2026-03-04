@@ -32,9 +32,6 @@ export default function PatientCenterPage() {
             <span className="section-tag">{pc.formsTag}</span>
             <h2 className="section-title">{pc.formsTitle}</h2>
             <div className="divider"></div>
-            <p className="section-subtitle">
-              {pc.formsSubtitle} <strong>(908) 497-9442</strong>.
-            </p>
           </div>
 
           <div className={styles.formsGrid}>

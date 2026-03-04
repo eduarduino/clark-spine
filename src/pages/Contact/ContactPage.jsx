@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { MapPin, Phone, Printer, Smartphone, Mail, CheckCircle } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import {
@@ -20,7 +20,7 @@ const COOLDOWN_MS = 60_000
 const EMPTY = { firstName: '', lastName: '', email: '', phone: '', subject: '', message: '' }
 
 export default function ContactPage() {
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
   const c = t.contact
   const dayKeys = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
 
@@ -29,6 +29,17 @@ export default function ContactPage() {
   const [touched, setTouched]     = useState({})
   const [submitted, setSubmitted] = useState(false)
   const [rateError, setRateError] = useState('')
+
+  // Re-translate any visible error messages when the language is toggled
+  useEffect(() => {
+    setErrors((prev) => {
+      const next = {}
+      Object.keys(prev).forEach((name) => {
+        if (prev[name]) next[name] = validateField(name, formData[name])
+      })
+      return next
+    })
+  }, [lang]) // eslint-disable-line react-hooks/exhaustive-deps
 
   // Validate a single field and return an error string (or '')
   const validateField = useCallback((name, value) => {
