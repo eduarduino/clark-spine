@@ -329,13 +329,9 @@
   background: var(--gray-100);
 }
 
-/* ===== OVERLAY ===== */
-.overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 999;
+/* ===== MOBILE NAV OVERLAY (backdrop) ===== */
+.navOverlay {
+  display: none; /* only shown on mobile via media query */
 }
 
 /* ===== RESPONSIVE ===== */
@@ -346,71 +342,111 @@
 }
 
 @media (max-width: 768px) {
+  /* ── Header bar ── */
   .burger { display: flex; align-items: center; justify-content: center; }
-  /* hide phone button from header on mobile — it lives inside the expanded menu */
   .phoneBtn { display: none; }
-  /* push controls to the right so row is: logo | [spacer] | controls | burger */
   .controls { margin-left: auto; }
   .inner { padding: 0 1rem; gap: 0.5rem; }
 
-  /* ── Expand-in-place nav (max-height accordion, no overlay popup) ── */
+  /* ── Backdrop overlay ── */
+  .navOverlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(7, 18, 36, 0.52);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.28s ease;
+  }
+
+  .navOverlayOpen {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* ── Right-side drawer ── */
   .nav {
     position: fixed;
-    top: 72px;
-    left: 0;
+    top: 0;
     right: 0;
-    background: var(--header-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    bottom: 0;
+    width: min(82vw, 300px);
+    background: var(--white);
+    border-left: 1px solid var(--gray-100);
+    box-shadow: -6px 0 40px rgba(0, 0, 0, 0.22);
     flex-direction: column;
     align-items: stretch;
     flex: none;
     justify-content: flex-start;
-    overflow: hidden;
-    max-height: 0;
-    padding: 0 1.25rem;
-    border-top: 1px solid transparent;
-    box-shadow: none;
-    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-                padding 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-                border-color 0.2s ease,
-                box-shadow 0.3s ease;
-    z-index: 1001;
+    gap: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 72px 0 2rem;       /* top pad = navbar height */
+    transform: translateX(110%);
+    transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
   }
 
   .nav.open {
-    max-height: 640px;
-    padding: 0.5rem 1.25rem 1.25rem;
-    border-top-color: var(--gray-200);
-    box-shadow: var(--shadow-lg);
+    transform: translateX(0);
   }
 
+  /* ── Drawer nav links ── */
   .nav a {
-    padding: 0.875rem 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 1.5rem;
     font-size: 1rem;
-    border-radius: var(--radius-md);
+    font-weight: 500;
+    color: var(--gray-800);
+    border-radius: 0;
     border-bottom: 1px solid var(--gray-100);
+    white-space: normal;
+    transition: background 0.15s ease, color 0.15s ease;
   }
 
-  .nav a:last-child {
+  .nav a:last-of-type {
     border-bottom: none;
   }
 
-  /* Phone CTA inside the expanded menu */
+  .nav a:hover {
+    background: var(--gray-50);
+    color: var(--navy);
+  }
+
+  .nav a.active {
+    background: rgba(26, 122, 191, 0.08);
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* ── Auto Accidents link inside drawer ── */
+  .accentLink {
+    margin: 0.75rem 1.25rem;
+    padding: 0.85rem 1rem !important;
+    border-radius: var(--radius-md) !important;
+    border-bottom: none !important;
+    justify-content: center;
+  }
+
+  /* ── Phone CTA at bottom of drawer ── */
   .navPhone {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.6rem;
-    margin-top: 0.875rem;
-    padding: 0.875rem 1rem;
+    margin: 1rem 1.25rem 0;
+    padding: 0.9rem 1rem;
     background: var(--navy);
     color: #ffffff !important;
     text-decoration: none;
     border-radius: var(--radius-full);
     font-size: 0.95rem;
     font-weight: 600;
-    border-bottom: none !important;
     transition: opacity 0.2s ease;
   }
 

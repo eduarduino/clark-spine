@@ -23,7 +23,19 @@ export default function Navbar() {
     window.scrollTo(0, 0)
   }, [location])
 
+  // Lock body scroll when drawer is open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [menuOpen])
+
   return (
+    <>
+    <div
+      className={`${styles.navOverlay} ${menuOpen ? styles.navOverlayOpen : ''}`}
+      onClick={() => setMenuOpen(false)}
+      aria-hidden="true"
+    />
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.inner}>
         <Link to="/" className={styles.logo} aria-label="Clark Spine and Pain Relief — Home">
@@ -142,5 +154,6 @@ export default function Navbar() {
         </button>
       </div>
     </header>
+    </>
   )
 }

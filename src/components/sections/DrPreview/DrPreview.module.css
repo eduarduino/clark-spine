@@ -32,11 +32,11 @@
   position: absolute;
   bottom: 1rem;
   right: 1rem;
-  background: var(--navy);
-  color: var(--white);
+  background: #0a2342; /* hardcoded — always dark regardless of theme */
+  color: #ffffff;
   padding: 0.75rem 1.25rem;
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.45);
   text-align: center;
 }
 

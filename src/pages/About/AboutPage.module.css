@@ -169,7 +169,7 @@
   font-family: var(--font-serif);
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--white);
+  color: #ffffff; /* always over dark gradient — never use themed var */
   line-height: 1.2;
 }
 .photoCaption span {
