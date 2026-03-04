@@ -334,9 +334,11 @@
 
 @media (max-width: 768px) {
   .burger { display: flex; align-items: center; justify-content: center; }
-  .phoneBtn span { display: inline; }
-  /* nav is position:fixed off-canvas on mobile — push controls to the right */
+  /* hide phone button on mobile — burger menu is the nav mechanism */
+  .phoneBtn { display: none; }
+  /* push controls to the right so row is: logo | [spacer] | controls | burger */
   .controls { margin-left: auto; }
+  .inner { padding: 0 1rem; gap: 0.5rem; }
 
   .nav {
     position: fixed;
